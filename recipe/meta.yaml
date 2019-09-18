@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-    number: 0
+    number: 1
     skip: true  # [ win and py27 ]
 
 requirements:
@@ -28,7 +28,7 @@ requirements:
 
   run:
     - vs2015_runtime  # [win]
-    - {{ pin_compatible('libitk', max_pin='x.x.x') }}
+    - {{ pin_compatible('libitk', exact=True) }}
 
 test:
   requires:
