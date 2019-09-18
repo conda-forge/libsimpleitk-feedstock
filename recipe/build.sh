@@ -1,9 +1,5 @@
 #!/bin/bash
 
-if [ `uname` == Darwin ]; then
-    CMAKE_ARGS="-D CMAKE_OSX_DEPLOYMENT_TARGET:STRING=${MACOSX_DEPLOYMENT_TARGET}"
-fi
-
 BUILD_DIR=${SRC_DIR}/build
 mkdir ${BUILD_DIR}
 cd ${BUILD_DIR}
@@ -13,7 +9,6 @@ cmake \
     -D "CMAKE_CXX_FLAGS:STRING=-fvisibility=hidden -fvisibility-inlines-hidden ${CXXFLAGS}" \
     -D "CMAKE_C_FLAGS:STRING=-fvisibility=hidden ${CFLAGS}" \
     -D CMAKE_BUILD_TYPE:STRING=Release \
-    ${CMAKE_ARGS} \
     -D "CMAKE_FIND_ROOT_PATH:PATH=${PREFIX}" \
     -D "CMAKE_FIND_ROOT_PATH_MODE_INCLUDE:STRING=ONLY" \
     -D "CMAKE_FIND_ROOT_PATH_MODE_LIBRARY:STRING=ONLY" \
