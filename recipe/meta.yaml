@@ -1,6 +1,6 @@
 {% set name = "libsimpleitk" %}
-{% set version = "1.2.4" %}
-{% set sha256 = "1d67ed4324fee0d7341a027de865bf915a34dfa82e2863d89037e2f2865f7559" %}
+{% set version = "2.0.0" %}
+{% set sha256 = "88e3873e9fc347ca7f2f8af4710d5402fbfef5989cf039abcce9b7a7e395bdb8" %}
 
 package:
   name: {{ name|lower }}
@@ -16,19 +16,18 @@ build:
 
 requirements:
   build:
-    - cmake   >=3.11
+    - cmake   >=3.15
     - ninja
-    - lua     5.1.*          # [ not win ]
-    - swig                   # [ win ]
-    - {{ compiler('c') }}
+    - lua     5.3.*
+    - swig    4.0.*
     - {{ compiler('cxx') }}
 
   host:
-    - libitk  <5
+    - libitk-devel  5.1.*
 
   run:
     - vs2015_runtime  # [win]
-    - {{ pin_compatible('libitk', exact=True) }}
+    - {{ pin_compatible('libitk-devel', exact=True) }}
 
 test:
   requires:
