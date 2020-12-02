@@ -1,18 +1,18 @@
 {% set name = "libsimpleitk" %}
-{% set version = "1.2.4" %}
-{% set sha256 = "1d67ed4324fee0d7341a027de865bf915a34dfa82e2863d89037e2f2865f7559" %}
+{% set version = "2.0.2" %}
+{% set sha256 = "56117842e0be53a4a7f482d9da2b62f56a85a6ea89b33389a7d6655fb8d3a200" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/SimpleITK/SimpleITK/releases/download/v{{version}}/SimpleITK-{{version}}.tar.gz
+  url: https://github.com/SimpleITK/SimpleITK/releases/download/v{{ version }}/SimpleITK-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
-    number: 0
-    skip: true  # [ win and py27 ]
+  number: 0
+  skip: true  # [ win and py27]
 
 requirements:
   build:
@@ -50,6 +50,6 @@ about:
   summary: Development headers and libraries for SimpleITK a simplified interface to the Insight Toolkit.
 
 extra:
-    recipe-maintainers:
-      - blowekamp
-      - zivy
+  recipe-maintainers:
+    - blowekamp
+    - zivy
