@@ -1,6 +1,10 @@
 {% set name = "libsimpleitk" %}
-{% set version = "2.0.2" %}
-{% set sha256 = "56117842e0be53a4a7f482d9da2b62f56a85a6ea89b33389a7d6655fb8d3a200" %}
+{% set version = "2.1rc1" %}
+{% set sha256 = "12d1695643f96c530129fb7e9a7eb2f1ec318cdc7b2a5831f744478eb8cbea3d" %}
+
+
+{% set test_cmake_args = "-D \"CMAKE_SYSTEM_PREFIX_PATH:FILEPATH=${PREFIX}\" ./Examples" %}  # [not win]
+{% set test_cmake_args = "-D \"CMAKE_SYSTEM_PREFIX_PATH:FILEPATH=%PREFIX%\" ./Examples" %}  # [win]
 
 package:
   name: {{ name|lower }}
@@ -9,6 +13,9 @@ package:
 source:
   url: https://github.com/SimpleITK/SimpleITK/releases/download/v{{ version }}/SimpleITK-{{ version }}.tar.gz
   sha256: {{ sha256 }}
+
+  patches:
+    - 0001-Remove-explicit-instantiating-of-Image-of-deque-of-L.patch
 
 build:
   number: 0
@@ -24,7 +31,7 @@ requirements:
     - {{ compiler('cxx') }}
 
   host:
-    - libitk-devel  5.1.*
+    - libitk-devel  5.2.*
 
   run:
     - vs2015_runtime  # [win]
