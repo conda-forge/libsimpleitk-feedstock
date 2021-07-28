@@ -17,7 +17,7 @@ source:
     -  0001-Remove-forward-declaration-of-Image-of-deque.patch
 
 build:
-  number: 2
+  number: 3
   skip: true  # [ win and py27]
 
 requirements:
