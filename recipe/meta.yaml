@@ -25,7 +25,8 @@ requirements:
   build:
     - cmake   >=3.15
     - ninja
-    - lua     5.3.*
+    - lua53          # [not win and not osx]
+    - lua     5.3.*  # [win or osx]
     - swig    4.0.*
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}

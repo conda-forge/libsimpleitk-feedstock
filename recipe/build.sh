@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 BUILD_DIR=${SRC_DIR}/build
 mkdir ${BUILD_DIR}
 cd ${BUILD_DIR}
@@ -28,7 +29,7 @@ cmake \
     -D WRAP_DEFAULT:BOOL=OFF \
     "${SRC_DIR}"
 
-cmake --build  . --config Release -- -j 2
+cmake --build  . --config Release
 cmake \
     -D CMAKE_INSTALL_PREFIX=$PREFIX \
     -P ${BUILD_DIR}/cmake_install.cmake
