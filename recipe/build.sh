@@ -4,7 +4,7 @@ BUILD_DIR=${SRC_DIR}/build
 mkdir ${BUILD_DIR}
 cd ${BUILD_DIR}
 
-cmake \
+cmake ${CMAKE_ARGS} \
     -G Ninja \
     -D "CMAKE_CXX_FLAGS:STRING=-fvisibility=hidden -fvisibility-inlines-hidden ${CXXFLAGS}" \
     -D "CMAKE_C_FLAGS:STRING=-fvisibility=hidden ${CFLAGS}" \
