@@ -17,8 +17,6 @@ package:
 source:
   url: https://github.com/SimpleITK/SimpleITK/releases/download/v{{ version }}/SimpleITK-{{ version }}.tar.gz
   sha256: {{ sha256 }}
-  patches:
-    - 0001-Remove-forward-declaration-of-Image-of-deque.patch
 
 build:
   number: 0
@@ -53,7 +51,7 @@ test:
     - cmake --build . --config Release                                   # [not win]
 
 about:
-  home: http::/www.simpleitk.org
+  home: http://www.simpleitk.org
   license: Apache-2.0
   license_file: LICENSE
   summary: Development headers and libraries for SimpleITK a simplified interface to the Insight Toolkit.
