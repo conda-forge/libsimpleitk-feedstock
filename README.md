@@ -1,7 +1,7 @@
 About libsimpleitk
 ==================
 
-Home: http::/www.simpleitk.org
+Home: http://www.simpleitk.org
 
 Package license: Apache-2.0
 
