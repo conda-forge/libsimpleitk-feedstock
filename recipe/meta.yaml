@@ -1,8 +1,8 @@
 {% set test_cmake_args = "-D \"CMAKE_SYSTEM_PREFIX_PATH:FILEPATH=${PREFIX}\" ./Examples" %}  # [not win]
 {% set test_cmake_args = "-D \"CMAKE_SYSTEM_PREFIX_PATH:FILEPATH=%PREFIX%\" ./Examples" %}  # [win]
 {% set name = "libsimpleitk" %}
-{% set version = "2.1.1" %}
-{% set sha256 = "9edc56b81a9f295081da2f6cafce4f7f5f3b4cfc6b8cb33365e68b581daea1d2" %}
+{% set version = "2.1.1.1" %}
+{% set sha256 = "f52f8906bc5350e1ea8e7b163ef9242ca7e52de5c53c51793ea7539c42014748" %}
 
 
 {% set test_cmake_args = "-D \"CMAKE_SYSTEM_PREFIX_PATH:FILEPATH=${PREFIX}\" ./Examples" %}  # [not win]
@@ -19,7 +19,7 @@ source:
     - 0001-Remove-forward-declaration-of-Image-of-deque.patch
 
 build:
-  number: 1
+  number: 2
 
 requirements:
   build:
