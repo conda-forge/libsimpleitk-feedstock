@@ -40,15 +40,16 @@ requirements:
 test:
   requires:
     - cmake
+    - ninja
     - {{ compiler("c") }}
     - {{ compiler("cxx") }}
   source_files:
     - Examples
   commands:
-    - test -d $PREFIX/include/SimpleITK*                                 # [not win]
-    - if not exist %LIBRARY_INC%\\SimpleITK* exit 1                      # [win]
-    - cmake -D "CMAKE_SYSTEM_PREFIX_PATH:FILEPATH=${PREFIX}" ./Examples  # [not win]
-    - cmake --build . --config Release                                   # [not win]
+    - test -d $PREFIX/include/SimpleITK*                                          # [not win]
+    - if not exist %LIBRARY_INC%\\SimpleITK* exit 1                               # [win]
+    - cmake -G Ninja -D "CMAKE_SYSTEM_PREFIX_PATH:FILEPATH=${PREFIX}" ./Examples  # [not win]
+    - cmake --build . --config Release                                            # [not win]
 
 about:
   home: http::/www.simpleitk.org
