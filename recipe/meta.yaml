@@ -17,7 +17,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -33,7 +33,7 @@ requirements:
 
   run:
     - vs2015_runtime  # [win]
-    - {{ pin_compatible('libitk-devel', exact=True) }}
+    - {{ pin_compatible('libitk', exact=True) }}
 
 test:
   requires:
