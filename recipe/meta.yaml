@@ -33,8 +33,7 @@ requirements:
     - libitk-devel  5.3.*
 
   run:
-    - vs2015_runtime  # [win]
-    - {{ pin_compatible('libitk-devel', exact=True) }}
+    - {{ pin_compatible('libitk', exact=True) }}
 
 test:
   requires:
@@ -42,13 +41,15 @@ test:
     - ninja
     - {{ compiler("c") }}
     - {{ compiler("cxx") }}
+    - libitk-devel
   source_files:
     - Examples
   commands:
     - test -d $PREFIX/include/SimpleITK*                                          # [not win]
     - if not exist %LIBRARY_INC%\\SimpleITK* exit 1                               # [win]
     - cmake -G Ninja -D "CMAKE_SYSTEM_PREFIX_PATH:FILEPATH=${PREFIX}" ./Examples  # [not win]
-    - cmake --build . --config Release                                            # [not win]
+    - cmake -G Ninja -D "CMAKE_SYSTEM_PREFIX_PATH:FILEPATH=%PREFIX%" -D CMAKE_BUILD_TYPE:STRING=RELEASE ./Examples     # [win]
+    - cmake --build . --config Release
 
 about:
   home: http://www.simpleitk.org
