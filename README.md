@@ -1,11 +1,11 @@
-About libsimpleitk
-==================
+About libsimpleitk-feedstock
+============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/libsimpleitk-feedstock/blob/main/LICENSE.txt)
 
 Home: http://www.simpleitk.org
 
 Package license: Apache-2.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/libsimpleitk-feedstock/blob/main/LICENSE.txt)
 
 Summary: Development headers and libraries for SimpleITK a simplified interface to the Insight Toolkit.
 
@@ -48,10 +48,31 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>win_64</td>
+              <td>win_64_c_compilervs2017cxx_compilervs2017</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7854&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libsimpleitk-feedstock?branchName=main&jobName=win&configuration=win%20win_64_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libsimpleitk-feedstock?branchName=main&jobName=win&configuration=win%20win_64_c_compilervs2017cxx_compilervs2017" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_c_compilervs2017cxx_compilervs2019</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7854&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libsimpleitk-feedstock?branchName=main&jobName=win&configuration=win%20win_64_c_compilervs2017cxx_compilervs2019" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_c_compilervs2019cxx_compilervs2017</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7854&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libsimpleitk-feedstock?branchName=main&jobName=win&configuration=win%20win_64_c_compilervs2019cxx_compilervs2017" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_c_compilervs2019cxx_compilervs2019</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7854&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libsimpleitk-feedstock?branchName=main&jobName=win&configuration=win%20win_64_c_compilervs2019cxx_compilervs2019" alt="variant">
                 </a>
               </td>
             </tr>
