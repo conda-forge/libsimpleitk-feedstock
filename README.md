@@ -1,11 +1,11 @@
-About libsimpleitk
-==================
+About libsimpleitk-feedstock
+============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/libsimpleitk-feedstock/blob/main/LICENSE.txt)
 
 Home: http://www.simpleitk.org
 
 Package license: Apache-2.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/libsimpleitk-feedstock/blob/main/LICENSE.txt)
 
 Summary: Development headers and libraries for SimpleITK a simplified interface to the Insight Toolkit.
 
