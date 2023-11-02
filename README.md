@@ -1,11 +1,11 @@
-About libsimpleitk
-==================
+About libsimpleitk-feedstock
+============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/libsimpleitk-feedstock/blob/main/LICENSE.txt)
 
 Home: http://www.simpleitk.org
 
 Package license: Apache-2.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/libsimpleitk-feedstock/blob/main/LICENSE.txt)
 
 Summary: Development headers and libraries for SimpleITK a simplified interface to the Insight Toolkit.
 
@@ -31,6 +31,13 @@ Current build status
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7854&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libsimpleitk-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_aarch64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7854&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libsimpleitk-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_" alt="variant">
                 </a>
               </td>
             </tr><tr>
