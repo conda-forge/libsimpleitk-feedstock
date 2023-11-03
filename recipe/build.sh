@@ -25,7 +25,7 @@ cmake \
     -D WRAP_DEFAULT:BOOL=OFF \
     "${SRC_DIR}"
 
-cmake --build  . --config Release
+cmake --build  . --config Release -- -j 4
 cmake \
     -D CMAKE_INSTALL_PREFIX=$PREFIX \
     -P ${BUILD_DIR}/cmake_install.cmake
