@@ -5,9 +5,9 @@ linux_aarch64:
   enabled: false
 linux_ppc64le:
   enabled: false
-test_on_native_only: true
 github:
   branch_name: main
   tooling_branch_name: main
 conda_build:
   pkg_format: '2'
+test: native_and_emulated
