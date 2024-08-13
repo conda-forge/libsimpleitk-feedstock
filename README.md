@@ -186,6 +186,3 @@ Feedstock Maintainers
 * [@blowekamp](https://github.com/blowekamp/)
 * [@zivy](https://github.com/zivy/)
 
-
-<!-- dummy commit to enable rerendering -->
-
