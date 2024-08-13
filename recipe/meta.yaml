@@ -18,11 +18,11 @@ requirements:
   build:
     - cmake
     - ninja
-    - lua
-    - swig
+    - lua     5.4.*
+    - swig    4.0.*
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-
+    - {{ stdlib('c') }}
   host:
     - libitk-devel
 
