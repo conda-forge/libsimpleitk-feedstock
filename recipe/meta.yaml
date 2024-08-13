@@ -1,39 +1,30 @@
-{% set test_cmake_args = "-D \"CMAKE_SYSTEM_PREFIX_PATH:FILEPATH=${PREFIX}\" ./Examples" %}  # [not win]
-{% set test_cmake_args = "-D \"CMAKE_SYSTEM_PREFIX_PATH:FILEPATH=%PREFIX%\" ./Examples" %}  # [win]
-{% set name = "libsimpleitk" %}
 {% set version = "2.3.1" %}
-{% set sha256 = "7498c1bd3ae8218027c17bcefd2346b16eda6f2a009c0b9f344bd163c4715870" %}
-
 
 {% set test_cmake_args = "-D \"CMAKE_SYSTEM_PREFIX_PATH:FILEPATH=${PREFIX}\" ./Examples" %}  # [not win]
 {% set test_cmake_args = "-D \"CMAKE_SYSTEM_PREFIX_PATH:FILEPATH=%PREFIX%\" ./Examples" %}  # [win]
 
 package:
-  name: {{ name|lower }}
+  name: libsimpleitk
   version: {{ version }}
 
 source:
   url: https://github.com/SimpleITK/SimpleITK/releases/download/v{{ version }}/SimpleITK-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
-
+  sha256: 7498c1bd3ae8218027c17bcefd2346b16eda6f2a009c0b9f344bd163c4715870
 
 build:
-  number: 1
+  number: 2
 
 requirements:
   build:
-    - cmake   >=3.16.3
+    - cmake
     - ninja
-    - lua     5.4.*
-    - swig    4.0.*
+    - lua
+    - swig
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
 
   host:
-    - libitk-devel  5.3.*
-
-  run:
-    - {{ pin_compatible('libitk', exact=True) }}
+    - libitk-devel
 
 test:
   requires:
