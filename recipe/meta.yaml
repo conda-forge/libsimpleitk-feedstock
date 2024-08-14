@@ -1,4 +1,4 @@
-{% set version = "2.3.1" %}
+{% set version = "2.4.0" %}
 
 package:
   name: libsimpleitk
@@ -6,23 +6,22 @@ package:
 
 source:
   url: https://github.com/SimpleITK/SimpleITK/releases/download/v{{ version }}/SimpleITK-{{ version }}.tar.gz
-  sha256: 7498c1bd3ae8218027c17bcefd2346b16eda6f2a009c0b9f344bd163c4715870
+  sha256: bcf9e3b7f944b049728a72ca99d122d3849802626bc41e8ba14b5498cd218df5
 
 build:
-  number: 2
+  number: 1
 
 requirements:
   build:
     - cmake   >=3.16.3
     - ninja
     - lua     5.4.*
-    - swig    4.0.*
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
 
   host:
-    - libitk-devel
+    - libitk-devel  5.4.*
 
 test:
   requires:
