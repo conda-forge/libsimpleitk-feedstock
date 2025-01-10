@@ -9,11 +9,11 @@ source:
   sha256: bcf9e3b7f944b049728a72ca99d122d3849802626bc41e8ba14b5498cd218df5
 
 build:
-  number: 1
+  number: 0
 
 requirements:
   build:
-    - cmake   >=3.16.3
+    - cmake   >=3.26.0
     - ninja
     - lua     5.4.*
     - {{ compiler('c') }}
@@ -21,7 +21,7 @@ requirements:
     - {{ compiler('cxx') }}
 
   host:
-    - libitk-devel  5.4.*
+    - libitk-devel  5.4.2
 
 test:
   requires:
