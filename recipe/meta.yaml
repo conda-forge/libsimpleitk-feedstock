@@ -9,7 +9,7 @@ source:
   sha256: 1ef3642b0695c8eb0a0193fefe7677c57bce94a86d6b01f48f58b2291b4ca935
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -37,7 +37,7 @@ test:
     - if not exist %LIBRARY_INC%\\SimpleITK* exit 1                               # [win]
     - cmake -G Ninja -D "CMAKE_SYSTEM_PREFIX_PATH:FILEPATH=${PREFIX}" ./Examples  # [not win]
     - cmake -G Ninja -D "CMAKE_SYSTEM_PREFIX_PATH:FILEPATH=%PREFIX%" -D CMAKE_BUILD_TYPE:STRING=RELEASE ./Examples     # [win]
-    - cmake --build . --config Release
+    - cmake --build . --config Release -j 2
 
 about:
   home: http://www.simpleitk.org
