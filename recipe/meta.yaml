@@ -35,7 +35,7 @@ test:
   commands:
     - test -d $PREFIX/include/SimpleITK*                                          # [not win]
     - if not exist %LIBRARY_INC%\\SimpleITK* exit 1                               # [win]
-    - cmake -G Ninja -D "CMAKE_SYSTEM_PREFIX_PATH:FILEPATH=${PREFIX}" -D "CMAKE_EXE_LINKER_FLAGS=-Wl,--no-toc-optimize" ./Examples  # [ppc64le]
+    - export CXXFLAGS="${CXXFLAGS} -mlongcall" && cmake -G Ninja -D "CMAKE_SYSTEM_PREFIX_PATH:FILEPATH=${PREFIX}" ./Examples  # [ppc64le]
     - cmake -G Ninja -D "CMAKE_SYSTEM_PREFIX_PATH:FILEPATH=${PREFIX}" ./Examples  # [not win and not ppc64le]
     - cmake -G Ninja -D "CMAKE_SYSTEM_PREFIX_PATH:FILEPATH=%PREFIX%" -D CMAKE_BUILD_TYPE:STRING=RELEASE ./Examples     # [win]
     - cmake --build . --config Release -j 2
