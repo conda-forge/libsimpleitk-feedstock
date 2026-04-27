@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# On ppc64le, -mlongcall avoids R_PPC64_REL24 relocation overflow
+# when linking large static libraries (±32MB branch limit).
+if [[ "${target_platform}" == linux-ppc64le ]]; then
+    CXXFLAGS="${CXXFLAGS} -mlongcall"
+    CFLAGS="${CFLAGS} -mlongcall"
+fi
+
 BUILD_DIR=${SRC_DIR}/build
 mkdir ${BUILD_DIR}
 cd ${BUILD_DIR}
