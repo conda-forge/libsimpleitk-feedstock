@@ -9,7 +9,7 @@ source:
   sha256: b616ed81a11b3068f93063e165aad3d29f10a6eafbc474c89ef9f1a72d2735ec
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -35,7 +35,8 @@ test:
   commands:
     - test -d $PREFIX/include/SimpleITK*                                          # [not win]
     - if not exist %LIBRARY_INC%\\SimpleITK* exit 1                               # [win]
-    - cmake -G Ninja -D "CMAKE_SYSTEM_PREFIX_PATH:FILEPATH=${PREFIX}" ./Examples  # [not win]
+    - export CXXFLAGS="${CXXFLAGS} -mlongcall" && cmake -G Ninja -D "CMAKE_SYSTEM_PREFIX_PATH:FILEPATH=${PREFIX}" ./Examples  # [ppc64le]
+    - cmake -G Ninja -D "CMAKE_SYSTEM_PREFIX_PATH:FILEPATH=${PREFIX}" ./Examples  # [not win and not ppc64le]
     - cmake -G Ninja -D "CMAKE_SYSTEM_PREFIX_PATH:FILEPATH=%PREFIX%" -D CMAKE_BUILD_TYPE:STRING=RELEASE ./Examples     # [win]
     - cmake --build . --config Release -j 2
 
